@@ -1,0 +1,38 @@
+
+  <div id="logo">
+ <%= image_tag("LookItAppLogo.jpg", :alt => "LookItApp Icon") %>
+</div>
+
+<h1>Listing Apps</h1>
+ 
+<%= link_to 'New App', new_app_path %>
+
+<table>
+  <tr>
+    <th>App ID</th>
+    <th>Name</th>
+    <th>Developer</th>
+    <th>Platform</th>
+    <th>Version</th>
+    <th>Price</th>
+    <th>Link</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @apps.each do |app| %>
+    <tr>
+      <td><%= app.appID %></td>
+      <td><%= app.name %></td>
+      <td><%= app.developer %></td>
+      <td><%= app.platform %></td>
+      <td><%= app.version %></td>
+      <td><%= app.price %></td>
+      <td><%= app.link %></td>
+      <td><%= link_to 'Show', app_path(app) %></td>
+      <td><%= link_to 'Edit', edit_app_path(app) %></td>
+      <td><%= link_to 'Destroy', app_path(app),
+      method: :delete, 
+      data: {confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

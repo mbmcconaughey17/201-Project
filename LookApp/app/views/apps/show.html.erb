@@ -1,0 +1,37 @@
+<p>
+  <strong>App ID:</strong>
+  <%= @app.appID %>
+</p>
+ 
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>
+</p>
+
+<p>
+  <strong>Developer:</strong>
+  <%= @app.developer %>
+</p>
+
+<p>
+  <strong>Platform:</strong>
+  <%= @app.platform %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @app.version %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @app.price %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @app.link %>
+</p>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>

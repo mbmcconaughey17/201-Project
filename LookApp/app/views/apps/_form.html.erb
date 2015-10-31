@@ -1,0 +1,56 @@
+<%= form_for @app do |f| %>
+ 
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@app.errors.count, "error") %> prohibited
+        this app from being saved:
+      </h2>
+      <ul>
+        <% @app.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :appID %><br>
+    <%= f.text_field :appID %>
+  </p>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+   <p>
+    <%= f.label :developer %><br>
+    <%= f.text_field :developer %>
+  </p>
+
+   <p>
+    <%= f.label :platform %><br>
+    <%= f.text_field :platform %>
+  </p>
+
+   <p>
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </p>
+
+   <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+
+   <p>
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
