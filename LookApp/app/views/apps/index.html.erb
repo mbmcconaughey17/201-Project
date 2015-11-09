@@ -1,13 +1,39 @@
 
   <div id="logo">
+    <%= image_tag("chest.jpg", :alt => "Treasure Chest/Shopping Cart") %>
+      <%= link_to 'Treasure Chest', cart_app_path %>
+
  <%= image_tag("LookItAppLogo.jpg", :alt => "LookItApp Icon") %>
 </div>
+
 
 <h1>Listing Apps</h1>
  
 <%= link_to 'New App', new_app_path %>
 
+
 <table>
+  <tr>
+    <th><%= image_tag("snapchat.png", :alt => "Snapchat Icon") %></th>
+    <th><%= image_tag("youtube.png", :alt => "Youtube Icon") %></th>
+    <th><%= image_tag("spotify.png", :alt => "Spotify Icon") %></th>
+</tr>
+
+<tr>
+  <td><%= link_to 'Snapchat', App.first %></td>
+  <td><%= link_to 'YouTube', App.find(3) %></td>
+  <td><%= link_to 'Spotify', App.find(4) %></td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+<!--<table>
   <tr>
     <th>App ID</th>
     <th>Name</th>
@@ -20,6 +46,7 @@
   </tr>
  
   <% @apps.each do |app| %>
+
     <tr>
       <td><%= app.appID %></td>
       <td><%= app.name %></td>
@@ -29,10 +56,13 @@
       <td><%= app.price %></td>
       <td><%= app.link %></td>
       <td><%= link_to 'Show', app_path(app) %></td>
+
       <td><%= link_to 'Edit', edit_app_path(app) %></td>
       <td><%= link_to 'Destroy', app_path(app),
       method: :delete, 
       data: {confirm: 'Are you sure?' } %></td>
     </tr>
+
+
   <% end %>
-</table>
+</table>-->

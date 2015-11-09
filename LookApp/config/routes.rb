@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   resources :apps
 
-  root 'home#main'
+  root 'apps#index'
+
+  get '/cart', to: 'apps#cart'
+
+
 end
 
 
