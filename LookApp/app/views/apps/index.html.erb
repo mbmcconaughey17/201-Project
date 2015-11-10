@@ -1,33 +1,70 @@
 
   <div id="logo">
     <%= image_tag("chest.jpg", :alt => "Treasure Chest/Shopping Cart") %>
-      <%= link_to 'Treasure Chest', cart_app_path %>
 
- <%= image_tag("LookItAppLogo.jpg", :alt => "LookItApp Icon") %>
+
+ <%= image_tag("LIALogo.png", :alt => "LookItApp Icon") %>
 </div>
 
 
-<h1>Listing Apps</h1>
+<h1><%= image_tag("newapps.png", :alt => "New Apps") %></h1>
  
 <%= link_to 'New App', new_app_path %>
 
 
-<table>
+
+<table align="center">
+  
   <tr>
-    <th><%= image_tag("snapchat.png", :alt => "Snapchat Icon") %></th>
-    <th><%= image_tag("youtube.png", :alt => "Youtube Icon") %></th>
-    <th><%= image_tag("spotify.png", :alt => "Spotify Icon") %></th>
-</tr>
+     <% @apps.take(5).each do |app| %>
+     
+        <th><%= link_to image_tag(app.ImageURL, :alt => "App Icon"), app_path(app) %></th>
 
-<tr>
-  <td><%= link_to 'Snapchat', App.first %></td>
-  <td><%= link_to 'YouTube', App.find(3) %></td>
-  <td><%= link_to 'Spotify', App.find(4) %></td>
-</tr>
+     <% end %>
+  </tr>
+
+    <tr>
+      <% @apps.take(5).each do |app| %>
+       <td><%= app.name %></td>
+      <% end %>
+    </tr>
+
+
+
+<br>
+
+  
+  <tr>
+     <% @apps.drop(5).take(5).each do |app| %>
+     
+       <th><%= link_to image_tag(app.ImageURL, :alt => "App Icon"), app_path(app) %></th>
+     <% end %>
+  </tr>
+
+    <tr>
+      <% @apps.drop(5).take(5).each do |app| %>
+        <td><%= app.name %></td>
+      <% end %>
+    </tr>
+    
+<br>
+
+  
+  <tr>
+     <% @apps.drop(10).take(5).each do |app| %>
+     
+        <th><%= link_to image_tag(app.ImageURL, :alt => "App Icon"), app_path(app) %></th>
+
+     <% end %>
+  </tr>
+
+    <tr>
+      <% @apps.drop(10).take(5).each do |app| %>
+        <td><%= app.name %></td>
+      <% end %>
+    </tr>
+
 </table>
-
-
-
 
 
 

@@ -7,9 +7,13 @@ h1 {
 	
 }
 
+
 body {
 
-	background: #ADEBFF url("waves.jpg");
+	background: #ADEBFF url(mainpagebackground.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+	 
 	
 }
 
@@ -20,11 +24,15 @@ body {
 
 th {
 	color: #00008A;
-	padding: 15px;
+	padding: 40px;
+	text-align: center;
 }
 
 td {
 	padding: 5px;
 	padding-right: 5px;
 	padding-left:15px;
+	text-align: center;
 }
+
+
