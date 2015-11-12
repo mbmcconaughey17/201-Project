@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :apps
 
   root 'apps#index'
+  get 'apps/cart'
 
-  #get '/cart', to: 'apps#cart'
+  get '/cart', to: 'apps#cart'
 
 
 end

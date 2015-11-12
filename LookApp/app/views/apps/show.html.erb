@@ -30,15 +30,20 @@
 
 <p>
   <strong>Link:</strong>
-  <%= @app.link %>
+  <%= link_to @app.link %>
 </p>
 
+<div id="description">
 <p>
-  <strong>Image URL:</strong>
-  <%= @app.ImageURL %>
+  <strong>Description:</strong>
+  <%= @app.Description %>
 </p>
-
-
+</div>
 
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
+
+<!--<%= button_to 'Back', apps_path %>-->
+
+
+

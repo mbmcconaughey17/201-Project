@@ -1,1 +1,49 @@
-<h1>Treasure Chest</h1>
+<div id="treasureChest">
+
+	<h1>Treasure Chest</h1>
+
+	<table>
+  <tr>
+    <th>App ID</th>
+    <th>Name</th>
+    <th>Version</th>
+    <th>Price</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @apps.each do |app| %>
+
+    <tr>
+      <td><%= app.appID %></td>
+      <td><%= app.name %></td>
+      <td><%= app.version %></td>
+      <td><%= app.price %></td>
+      <!--<td><%= link_to 'Destroy', app_path(app),
+      method: :delete, 
+      data: {confirm: 'Are you sure?' } %></td>-->
+    </tr>
+
+
+  <% end %>
+
+</table>
+
+<table>
+	<tr>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>Total</th>
+		<td>App.sum(:price)</td>
+	</tr>
+</table>
+</div>
+
+
+<%= link_to 'Keep Searching', apps_path %>
+
+
+
+
