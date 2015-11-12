@@ -2,9 +2,11 @@
 
 	<h1>Treasure Chest</h1>
 
+
+<div id="back">
 	<table>
   <tr>
-    <th>App ID</th>
+    <th>App</th>
     <th>Name</th>
     <th>Version</th>
     <th>Price</th>
@@ -14,10 +16,10 @@
   <% @apps.each do |app| %>
 
     <tr>
-      <td><%= app.appID %></td>
-      <td><%= app.name %></td>
-      <td><%= app.version %></td>
-      <td><%= app.price %></td>
+      <div class="value"><td><%= image_tag(app.ImageURL, :alt => "App Icon") %></td></div>
+      <div class="value"><td><%= app.name %></td></div>
+      <div class="value"><td><%= app.version %></td></div>
+      <div class="value"><td><%= app.price %></td></div>
       <!--<td><%= link_to 'Destroy', app_path(app),
       method: :delete, 
       data: {confirm: 'Are you sure?' } %></td>-->
@@ -36,14 +38,16 @@
 		<th></th>
 		<th></th>
 		<th>Total</th>
-		<td>App.sum(:price)</td>
+		<th><%= App.sum(:price) %></th>
+
 	</tr>
 </table>
-</div>
 
+
+</div>
 
 <%= link_to 'Keep Searching', apps_path %>
 
 
-
+</div>
 

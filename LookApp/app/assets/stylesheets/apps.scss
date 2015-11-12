@@ -36,15 +36,11 @@ td {
 	font-family: fantasy;
 	font-weight: bold;
 	color: #FFFFFF;
+
 }
 
 .chest {
 	background: url(treasurebackground.png);
-	float: right;
-	td {
-	color: #000000;
-	}
-
 }
 
 p {
@@ -56,6 +52,7 @@ p {
 
 tr {
 	position: center;
+	z-index: 20;
 }
 
 strong {
@@ -68,3 +65,14 @@ strong {
 	margin-left: 200px;
 	margin-right: 200px;
 }
+
+#back {
+	background-color: rgba(0, 76, 102, 0.6);
+
+	margin: 40px;
+	z-index: -1;
+
+}
+
+
+
