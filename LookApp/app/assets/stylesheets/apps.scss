@@ -1,16 +1,15 @@
 // Place all the styles related to the apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 h1 {
-	color: #00008A;
 	text-align: center;
-	
 }
 
 
 body {
 
-	background: #ADEBFF url(mainpagebackground.png);
+	background: #02667B url(mainpagebackground.png);
 	background-repeat:no-repeat;
 	background-size:cover;
 	 
@@ -20,12 +19,13 @@ body {
 #logo {
 	
 	text-align: center;
+	
 }
 
 th {
 	color: #00008A;
 	padding: 40px;
-	text-align: center;
+	position: center;
 }
 
 td {
@@ -33,6 +33,38 @@ td {
 	padding-right: 5px;
 	padding-left:15px;
 	text-align: center;
+	font-family: fantasy;
+	font-weight: bold;
+	color: #FFFFFF;
 }
 
+.chest {
+	background: url(treasurebackground.png);
+	float: right;
+	td {
+	color: #000000;
+	}
 
+}
+
+p {
+	text-align: center;
+	font-family: fantasy;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+tr {
+	position: center;
+}
+
+strong {
+	margin-right: 15px;
+	font-weight: 700;
+}
+
+#description {
+	margin: 40px;
+	margin-left: 200px;
+	margin-right: 200px;
+}

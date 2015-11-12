@@ -15,6 +15,10 @@ class AppsController < ApplicationController
 		@app = App.find(params[:id])
 	end
 
+	def cart
+		@apps = App.all
+	end
+
 	def create
 		@app = App.new(app_params)
 
