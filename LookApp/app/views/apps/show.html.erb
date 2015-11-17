@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<div id="showpg">
+<body>
 <p>
   <strong>App ID:</strong>
   <%= @app.appID %>
@@ -40,10 +43,13 @@
 </p>
 </div>
 
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<%= link_to 'Edit', edit_app_path(@app), class: 'btn btn-info' %> 
+<%= link_to 'Back', apps_path, class: 'btn btn-info' %>
 
 <!--<%= button_to 'Back', apps_path %>-->
 
 
 
+</body>
+</div>
+</html>
