@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root 'apps#index'
   get 'apps/cart'
 
-  get '/cart', to: 'apps#cart'
 
+  get '/cart', to: 'apps#cart'
 
 end
 
