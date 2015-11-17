@@ -11,6 +11,10 @@
  * file per style scope.
  *
  */
+
+$linkColor: #ffe066;
+$linkColorHover: b37700 !default;
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -24,4 +28,6 @@
 
  }
 
- 
+ a.style {
+ 		color: black;
+ 	}

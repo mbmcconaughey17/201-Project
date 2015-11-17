@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   root 'apps#index'
   get 'apps/cart'
-
+  get 'apps/aboutus'
 
   get '/cart', to: 'apps#cart'
+  get '/aboutus', to: 'apps#aboutus'
 
 end
 

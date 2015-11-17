@@ -19,6 +19,10 @@ class AppsController < ApplicationController
 		@apps = App.all
 	end
 
+	def aboutus
+		@apps = App.all
+	end
+
 	def create
 		@app = App.new(app_params)
 

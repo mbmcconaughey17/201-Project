@@ -2,42 +2,51 @@
 <html lang='en'>
 <div class="row">
   <div class="col-sm-2 col-sm-offset-4">
-    <h1><%= image_tag("newapps.png", :alt => "New Apps") %></h1>
+    <h1><%= link_to image_tag("newapps.png", :alt => "New Apps"), new_app_path %></h1>
   </div>
 </div>
 
 <table class="table">
   <tr>
+  
     <% App.all.order("id desc").limit(5).each do |app| %>
-       <th class="text-center"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
+
+       <th class="text-center col-xs-1"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
 
      <% end %>
+
   </tr>
   <tr>
+
     <% App.all.order("id desc").limit(5).each do |app| %>
-        <td class="text-center"><%= app.name %></td>
+    
+        <td class="text-center col-xs-1"><%= app.name %></td>
+
       <% end %>
-   
+  
     </tr>
 </table>
 
 <div class="row">
   <div class="col-sm-2 col-sm-offset-4">
     <h1><%= image_tag("suggestedapps.png", :alt => "New Apps") %></h1>
-</div>
+  </div>
 </div>
 
 <table class="table">
     <tr>
+  
      <% @apps.drop(5).take(5).each do |app| %>
-     
-       <th class="text-center"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
+    
+       <th class="text-center col-xs-1"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
+
      <% end %>
+ 
     </tr>
 
     <tr>
       <% @apps.drop(5).take(5).each do |app| %>
-        <td class="text-center"><%= app.name %></td>
+        <td class="text-center col-xs-1"><%= app.name %></td>
       <% end %>
     </tr>
 </table>
@@ -45,22 +54,26 @@
 <div class="row">
   <div class="col-sm-2 col-sm-offset-4">
     <h1><%= image_tag("featuredapps.png", :alt => "New Apps") %></h1>
-</div>
+  </div>
 </div>
 
 <table class="table">
+  
     <tr>
-      <% @apps.drop(10).take(5).each do |app| %>
-        <th class="text-center"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
+      <% App.where(:featured => "true").each do |app| %>
+     
+        <th class="text-center col-xs-1"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
       <% end %>
     </tr>
-
     <tr>
-      <% @apps.drop(10).take(5).each do |app| %>
-        <td class="text-center"><%= app.name %></td>
+      <% App.where(:featured => "true").each do |app| %>
+   
+        <td class="text-center col-xs-1"><%= app.name %></td>
+
       <% end %>
     </tr>
 
 </table>
+
 
 </html>
