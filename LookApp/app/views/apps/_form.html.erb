@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+
+<form>
 <%= form_for @app do |f| %>
  
   <% if @app.errors.any? %>
@@ -13,44 +18,63 @@
       </ul>
     </div>
   <% end %>
- 
-  <p>
-    <%= f.label :appID %><br>
-    <%= f.text_field :appID %>
-  </p>
- 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
 
-   <p>
-    <%= f.label :developer %><br>
-    <%= f.text_field :developer %>
-  </p>
+ <div class="field form-group">
+    <%= f.label :appID, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :appID, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+ <div class="field form-group">
+    <%= f.label :name, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :name, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+ <div class="field form-group">
+    <%= f.label :developer, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :developer, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+  <div class="field form-group">
+    <%= f.label :platform, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :platform, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+  <div class="field form-group">
+    <%= f.label :version, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :version, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+   <div class="field form-group">
+    <%= f.label :price, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :price, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+ <div class="field form-group">
+    <%= f.label :link, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :link, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
 
-   <p>
-    <%= f.label :platform %><br>
-    <%= f.text_field :platform %>
-  </p>
-
-   <p>
-    <%= f.label :version %><br>
-    <%= f.text_field :version %>
-  </p>
-
-   <p>
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </p>
-
-   <p>
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
-  </p>
 
   <p>
     <%= f.submit %>
   </p>
  
 <% end %>
+
+
+</html>
