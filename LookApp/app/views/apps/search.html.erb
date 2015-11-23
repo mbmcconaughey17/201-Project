@@ -1,0 +1,14 @@
+
+
+<div class="row">
+	<div class="text-center col-sm-8 col-sm-offset-2">
+		<h1>Results Matching Your Search</h1>
+	</div>
+</div>
+
+	<% @apps.each do |app| %>
+		<div class="app">
+  			<h1 class="app-name"><%= link_to app.name, app %></h1>
+		</div>
+	<% end %>
+

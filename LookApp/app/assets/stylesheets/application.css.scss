@@ -22,7 +22,6 @@ $linkColorHover: b37700 !default;
  	background-image: image-url('mainpagebackground.png');
  	background-repeat: no-repeat;
  	background-size: cover;
- 	color: #FFFFFF;
  	font-family: herculanum;
 
 
@@ -31,3 +30,25 @@ $linkColorHover: b37700 !default;
  a.style {
  		color: black;
  	}
+
+p, td {
+	color: #FFFFFF;
+}
+
+button {
+	color: blue;
+	background-color: #ffd34d;
+}
+
+.btnExample:hover {
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

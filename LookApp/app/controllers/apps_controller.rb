@@ -1,6 +1,11 @@
 class AppsController < ApplicationController
 	def index
-		@apps = App.all
+		if params[:search]
+			@apps = App.search(params[:search]).order("created_at DESC")
+		else
+			@apps = App.order("created_at DESC")
+		end
+	
 	end
 
 	def show
@@ -17,6 +22,14 @@ class AppsController < ApplicationController
 
 	def cart
 		@apps = App.all
+	end
+
+	def search 
+		if params[:search]
+			@apps = App.search(params[:search]).order("created_at DESC")
+		else
+			@apps = App.order("created_at DESC")
+		end
 	end
 
 	def aboutus
