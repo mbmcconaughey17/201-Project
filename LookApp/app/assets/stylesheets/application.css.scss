@@ -12,7 +12,7 @@
  *
  */
 
-$linkColor: #ffe066;
+$linkColor: #ffe066 !default;
 $linkColorHover: b37700 !default;
 
  @import "bootstrap-sprockets";
@@ -28,7 +28,7 @@ $linkColorHover: b37700 !default;
  }
 
  a.style {
- 		color: black;
+ 		color: black !important;
  	}
 
 p, td {
@@ -42,10 +42,13 @@ button {
 
 .btnExample:hover {
 	cursor: pointer;
+	color: #ffe066;
 }
 
-
-
+a.link {
+	color: #FFFFFF;
+	text-decoration:none;
+}
 
 
 

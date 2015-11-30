@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :apps
+  post '/rate' => 'rater#create', :as => 'rate'
+  resources :apps do
+      resources :ratings
+  end
 
-  root 'apps#index'
   get 'apps/cart'
   get 'apps/aboutus'
   get 'apps/search'
@@ -11,8 +13,12 @@ Rails.application.routes.draw do
   get '/aboutus', to: 'apps#aboutus'
   get '/search', to: 'apps#search'
 
-end
+    
 
+root 'apps#index'
+
+
+end
 
 
   #get 'home/main'

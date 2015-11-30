@@ -35,7 +35,7 @@
 
 <p>
   <strong>Link:</strong>
-  <%= link_to @app.link, :class => "style" %>
+  <%= link_to @app.link, "#{@app.link}" %></a>
 </p>
 
 <div id="description">
@@ -45,8 +45,35 @@
 </p>
 </div>
 
+<h2>Ratings</h2>
+<% @app.ratings.each do |rating| %>
+<p>
+  <h4 id="rating"><%= rating.body %></h4>
+  <h5 id="rating"><%= rating.created_at.to_time.strftime('%B %e, %I:%M %p') %></h5>
+</p>
+<% end %>
+
+
+<h2>Add rating:</h2>
+<%= form_for([@app, @app.ratings.build]) do |f| %>
+  <div class="field">
+    <%= f.label :commenter %><br />
+    <%= f.text_field :commenter %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+
+
+<div class="row">
 <%= link_to 'Edit', edit_app_path(@app), class: 'btn btn-info' %> 
 <%= link_to 'Back', apps_path, class: 'btn btn-info' %>
+</div>
 
 <!--<%= button_to 'Back', apps_path %>-->
 

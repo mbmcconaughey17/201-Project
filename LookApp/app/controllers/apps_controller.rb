@@ -5,11 +5,14 @@ class AppsController < ApplicationController
 		else
 			@apps = App.order("created_at DESC")
 		end
-	
 	end
 
 	def show
 		@app = App.find(params[:id])
+	end
+
+	def aboutus
+		@apps = App.all
 	end
 
 	def new
@@ -30,10 +33,6 @@ class AppsController < ApplicationController
 		else
 			@apps = App.order("created_at DESC")
 		end
-	end
-
-	def aboutus
-		@apps = App.all
 	end
 
 	def create

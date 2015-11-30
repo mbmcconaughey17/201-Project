@@ -8,6 +8,7 @@
 
 	<% @apps.each do |app| %>
 		<div class="app">
+			<%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %>
   			<h1 class="app-name"><%= link_to app.name, app %></h1>
 		</div>
 	<% end %>
