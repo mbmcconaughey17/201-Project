@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029042057) do
+ActiveRecord::Schema.define(version: 20151130223401) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "appID"
@@ -21,8 +21,35 @@ ActiveRecord::Schema.define(version: 20151029042057) do
     t.string   "version"
     t.string   "price"
     t.string   "link"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "ImageURL",    limit: 255
+    t.string   "Description"
+    t.boolean  "featured"
+    t.boolean  "new"
+    t.boolean  "suggested"
+  end
+
+  create_table "chest", id: false, force: :cascade do |t|
+    t.string "imageURL"
+    t.string "name"
+    t.string "version"
+    t.string "price"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "comment"
+    t.integer  "app_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["app_id"], name: "index_ratings_on_app_id"
+
+  create_table "users", id: false, force: :cascade do |t|
+    t.string "username"
+    t.string "password"
   end
 
 end

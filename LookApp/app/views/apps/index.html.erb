@@ -37,7 +37,7 @@
 <table class="table">
     <tr>
   
-     <% @apps.drop(5).take(5).each do |app| %>
+     <% App.where(:suggested => "true").each do |app| %>
     
        <th class="text-center col-xs-1"><%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %></th>
 
@@ -46,7 +46,7 @@
     </tr>
 
     <tr>
-      <% @apps.drop(5).take(5).each do |app| %>
+      <% App.where(:suggested => "true").each do |app| %>
         <td class="text-center col-xs-1"><%= app.name %></td>
       <% end %>
     </tr>
