@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+
+<form>
+<%= form_for @app do |f| %>
+ 
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@app.errors.count, "error") %> prohibited
+        this app from being saved:
+      </h2>
+      <ul>
+        <% @app.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field form-group">
+    <%= f.label :appID, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :appID, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+ <div class="field form-group">
+    <%= f.label :name, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :name, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+ <div class="field form-group">
+    <%= f.label :developer, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :developer, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+  <div class="field form-group">
+    <%= f.label :platform, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :platform, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+  <div class="field form-group">
+    <%= f.label :version, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :version, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+   <div class="field form-group">
+    <%= f.label :price, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :price, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+ <div class="field form-group">
+    <%= f.label :link, class: 'col-sm-1 control-label' %><br>
+    <div class="col-sm-10">
+    <%= f.text_field :link, class: 'form-control' %>
+    </div>
+ </div>
+ <br>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+
+
+</html>
