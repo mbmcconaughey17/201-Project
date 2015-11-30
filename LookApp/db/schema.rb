@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130024618) do
+ActiveRecord::Schema.define(version: 20151130223401) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "appID"
@@ -37,17 +37,19 @@ ActiveRecord::Schema.define(version: 20151130024618) do
     t.string "price"
   end
 
-
-  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
-
   create_table "ratings", force: :cascade do |t|
     t.string   "commenter"
-    t.text     "body"
+    t.text     "comment"
     t.integer  "app_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "ratings", ["app_id"], name: "index_ratings_on_app_id"
 
+  create_table "users", id: false, force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+  end
 
 end
