@@ -7,9 +7,16 @@
 </div>
 
 	<% @apps.each do |app| %>
+<div class="row">
 		<div class="app">
+			<div class="col-sm-2 col-sm-offset-1">
 			<%= link_to image_tag(app.ImageURL, :alt => "App Icon", :class => "img-rounded"), app_path(app) %>
-  			<h1 class="app-name"><%= link_to app.name, app %></h1>
 		</div>
+		<div class="col-xs-6">
+  			<h3 class="app-name"><%= link_to app.name, app %></h3>
+		</div>
+	</div>
+</div>
+<br>
 	<% end %>
 

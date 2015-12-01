@@ -27,9 +27,14 @@ $linkColorHover: b37700 !default;
 
  }
 
- a.style {
- 		color: black !important;
- 	}
+a {
+	color: #ffffff;
+}
+
+a:hover, a:focus {
+	color: #fff0b3;
+}
+
 
 p, td {
 	color: #FFFFFF;
