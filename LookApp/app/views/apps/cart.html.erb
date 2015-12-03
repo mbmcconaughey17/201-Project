@@ -14,14 +14,14 @@
     <th colspan="2"></th>
   </tr>
  
-  <% @apps.each do |app| %>
+  <% @chest_items.each do |chest_item| %>
 
     <tr>
-      <div class="value"><td><%= image_tag(app.ImageURL, :alt => "App Icon") %></td></div>
-      <div class="value"><td><%= app.name %></td></div>
-      <div class="value"><td><%= app.version %></td></div>
-      <div class="value"><td><%= app.price %></td></div>
-      <!--<td><%= link_to 'Destroy', app_path(app),
+      <div class="value"><td><%= image_tag(chest_item.ImageURL, :alt => "App Icon") %></td></div>
+      <div class="value"><td><%= chest_item.name %></td></div>
+      <div class="value"><td><%= chest_item.version %></td></div>
+      <div class="value"><td><%= chest_item.price %></td></div>
+      <!--<td><%= link_to 'Destroy', chest_item_path(chest_item),
       method: :delete, 
       data: {confirm: 'Are you sure?' } %></td>-->
     </tr>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_id: 
+  chest_id: 
+  price: MyString
+
+two:
+  app_id: 
+  chest_id: 
+  price: MyString

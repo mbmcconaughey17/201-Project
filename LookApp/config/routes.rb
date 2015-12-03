@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'chest_items/create'
+
+  get 'chest_items/update'
+
+  get 'chest_items/destroy'
+
+  get 'cart/show'
+
+  resources :chest_items, only: [:create, :update, :destroy] 
+
+
   #post '/rate' => 'rater#create', :as => 'rate'
   resources :apps do
       resources :ratings

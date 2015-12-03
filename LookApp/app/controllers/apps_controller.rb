@@ -24,7 +24,7 @@ class AppsController < ApplicationController
 	end
 
 	def cart
-		@apps = App.all
+		@chest_items = App.all
 	end
 
 	def search 
