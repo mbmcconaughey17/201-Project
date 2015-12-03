@@ -1,27 +1,41 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 2.0.0
+* Rails 4.2.4
+*Bootstrap for Styling
 
-Things you may want to cover:
+*To install Ruby on Rails: 
 
-* Ruby version
+  OSX
+    -Need Xcode Command Line Tools
+    -Configure Git
+    -Install Homebrew
+      -$ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    -Install Ruby
+      -$brew install rbenv ruby-build rbenv-gem-rehash
+    -Close and reopen command line
+    -Install preferred (latest and most stable) version of Ruby
+      -$rbenv install 2.2.2
+      -$rbenv rehash
+      -$rbenv global 2.2.2
+    -Install bundler to manage all dependencies
+      -$gem install bundler
+      -$brew install rbenv-default-gems
+    -Install sqlite3 for database (OSX often comes with this, but this command ensures you have the latest version)
+      -$brew install sqlite3
+    -Install Rails
+      -$gem install rails
+    -Close and reopen command line 
+    
+    
+  Windows
+    -
 
-* System dependencies
 
-* Configuration
+*To access Website
+  -Go to localhost:3000 in browser
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
