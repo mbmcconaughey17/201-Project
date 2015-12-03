@@ -45,56 +45,55 @@
 </p>
 </div>
 
+
 <div class="row">
-<h2>Ratings</h2>
-<% @app.ratings.each do |rating| %>
-<p>
-  <h4 id="rating"><%= rating.comment %></h4>
-  <h5 id="rating"><%= rating.created_at.to_time.strftime('%B %e, %I:%M %p') %></h5>
-</p>
-<% end %>
+  
+    <div class="row">
+      <h2>Comments</h2>
+      <% @app.ratings.each do |rating| %>
+        <p>
+          <div class="col-sm-4 col-sm-offset-1">
+            <h4 id="rating"><%= rating.comment %></h4>
+            <h5 id="rating"><%= rating.created_at.to_time.strftime('%B %e, %I:%M %p') %></h5>
+          </div>
+        </p>
+      <% end %>
+    </div>
 
+    <h2>Add comment:</h2>
+    <%= form_for([@app, @app.ratings.build]) do |f| %>
+      <div class="field">
+        <%= f.label :commenter %><br />
+        <%= f.text_field :commenter %>
+      </div>
+        <!--<%= radio_button :ratings, :stars, "1" %>
+        <%= radio_button :ratings, :stars, "2" %>
+        <%= radio_button :ratings, :stars, "3" %>
+        <%= radio_button :ratings, :stars, "4" %>
+        <%= range_field :ratings, :in => 0..5, :step => '1' %>
+        <%= select(:app, :ratings, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]) %>-->
 
-<h2>Add rating:</h2>
-<%= form_for([@app, @app.ratings.build]) do |f| %>
-  <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </div>
+      <div class="field">
+        <%= f.label :comment %><br />
+        <%= f.text_area :comment %>
+      </div>
+  
 
-
-
-  <%= radio_button :ratings, :stars, "1" %>
-  <%= radio_button :ratings, :stars, "2" %>
-  <%= radio_button :ratings, :stars, "3" %>
-  <%= radio_button :ratings, :stars, "4" %>
-
-  <%= range_field :ratings, :in => 0..5, :step => '1' %>
-
-  <%= select_tag(:ratings, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]])) %>
-  <%= select(:app, :ratings, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]) %>
-
-
-
-
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <% end %>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
 </div>
+
 <div class="row">
   <br>
 </div>
+
 <div class="row">
 <%= link_to 'Edit', edit_app_path(@app), class: 'btn btn-info' %> 
 <%= link_to 'Back', apps_path, class: 'btn btn-info' %>
 </div>
 
-<!--<%= button_to 'Back', apps_path %>-->
 
 </div>
 </div>
